@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'NeueBit';
+    src: url('./TimRodenbroeker-Website/PPNeueBit-Bold.otf') format('opentype');
+}
+
+header {
+    height: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent; /* Make the header background transparent */
+    z-index: 2; /* Ensure the header is above the video */
+}
+
+body {
+    font-family: 'NeueBit', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: white;
+    background-color: #232122;
+}
+
+nav {
+    padding: 0 20px;
+    background-color: transparent; /* Make the background invisible */
+}
+
+nav ul {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+}
+
+nav ul li a {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0;
+}
+
+.hero {
+    position: relative; /* Ensures child elements are positioned relative to it */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0; /* Video stays behind */
+}
+
+.hero-content {
+    position: absolute; /* Ensures it overlays the video */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers it */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 5; /* Ensures text stays above the video */
+}
+
+
+.about {
+    width: 100vw;
+    height: 65vh;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    box-sizing: border-box; 
+}
+
+.about h4 {
+    margin: 5px 0; 
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.typed-cursor {
+    display: inline; /* Keeps the cursor next to the text */
+    font-weight: 400;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+
+.scroll-container {
+    width: 100%;
+    /* overflow-x: auto; */
+    white-space: nowrap;
+    /* scrollbar-width: none; Hide scrollbar for Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+    /* display: none; Hide scrollbar for Chrome, Safari */
+}
+
+.scroll-content {
+    display: inline-flex;
+    background-color: white;
+}
+
+.scroll-item {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    text-decoration: none;
+    width: 470px;
+    height: 720px;
+}
+
+.scroll-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.scroll-item h5 {
+    color:black;
+    font-size: 20px;
+    padding:0 30px;
+    white-space: normal; 
+    word-wrap: break-word; 
+}
+
+.scroll-item p {
+    color:black;
+    font-size: 16px;
+    white-space: normal; 
+    word-wrap: break-word; 
+    padding:0 30px;
+}
