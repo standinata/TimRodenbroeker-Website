@@ -1,6 +1,16 @@
 @font-face {
     font-family: 'NeueBit';
-    src: url('./TimRodenbroeker-Website/PPNeueBit-Bold.otf') format('opentype');
+    src: url('assets/PPNeueBit-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'SpaceMono';
+    src: url('assets/SpaceMono-Regular.ttf') format('opentype');
+}
+/* DESKTOP SIZE */
+
+html, body {
+    overflow-x: hidden;
 }
 
 header {
@@ -37,6 +47,8 @@ nav ul li a {
     margin-right: 20px;
     color: white;
     text-decoration: none;
+    font-family: 'SpaceMono', sans-serif;
+    font-size: 18px;
 }
 
 h1 {
@@ -55,8 +67,8 @@ h1 {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
-    object-fit: cover;
+    /* height: 100vh; */
+    /* object-fit: cover; */
     z-index: 0; /* Video stays behind */
 }
 
@@ -66,6 +78,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%); /* Centers it */
     display: flex;
+    flex-direction: column; /* Aligns text one after another */
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -73,6 +86,10 @@ h1 {
     z-index: 5; /* Ensures text stays above the video */
 }
 
+h1 {
+    font-family: 'NeueBit', sans-serif;
+    font-size: 140px;
+}
 
 .about {
     width: 100vw;
@@ -87,8 +104,16 @@ h1 {
 
 .about h4 {
     margin: 5px 0; 
-    font-size: 24px;
+    font-size: 64px;
     font-weight: bold;
+}
+
+.line2{
+    padding-left:20%;
+}
+
+.line3{
+    padding-right:15%;
 }
 
 .typed-cursor {
@@ -103,7 +128,7 @@ h1 {
 
 .scroll-container {
     width: 100%;
-    /* overflow-x: auto; */
+    height:100%;
     white-space: nowrap;
     /* scrollbar-width: none; Hide scrollbar for Firefox */
 }
@@ -117,10 +142,11 @@ h1 {
     background-color: white;
 }
 
-.scroll-item {
+.swiper-slide {
     display: flex;
     flex-direction: column;
-    align-items: left;
+    justify-content: space-between; /* Aligns contents to the top and bottom */
+    align-items: flex-start; /* Aligns contents to the left */
     text-align: left;
     text-decoration: none;
     width: 470px;
@@ -134,17 +160,30 @@ h1 {
 }
 
 .scroll-item h5 {
+    font-family: 'SpaceMono', sans-serif;
     color:black;
     font-size: 20px;
     padding:0 30px;
     white-space: normal; 
     word-wrap: break-word; 
+    font-weight:normal;
+    text-decoration: none;
 }
 
 .scroll-item p {
+    font-family: 'SpaceMono', sans-serif;
     color:black;
-    font-size: 16px;
+    font-weight:normal;
+    font-size: 17px;
     white-space: normal; 
     word-wrap: break-word; 
     padding:0 30px;
+    /* padding-bottom: 20px; */
+    text-decoration: none;
 }
+
+
+/* TABLET SIZE */
+
+
+/* MOBILE SIZE */

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var typed1 = new Typed("#line1", {
-        strings: ["Tim Rodenbroeker is"], // First line
+        strings: ["&lt;Tim Rodenbroeker is&gt;"], // First line
         typeSpeed: 50, // Speed of typing
         backSpeed: 30, // Speed of backspacing (not used)
         showCursor: true, // Show cursor while typing
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             self.cursor.remove(); // Remove cursor after typing
             setTimeout(() => {
                 var typed2 = new Typed("#line2", {
-                    strings: ["a design educator"], // Second line
+                    strings: ["&lt;a design educator&gt;"], // Second line
                     typeSpeed: 50,
                     showCursor: true,
                     cursorChar: "|",
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         self.cursor.remove(); // Remove cursor after typing
                         setTimeout(() => {
                             var typed3 = new Typed("#line3", {
-                                strings: ["a freelance creative technologist"], // Third line
+                                strings: ["&lt;a/ freelance creative technologist&gt;"], // Third line
                                 typeSpeed: 50,
                                 showCursor: true,
                                 cursorChar: "|",
@@ -32,3 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 0,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
