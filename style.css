@@ -56,9 +56,13 @@ h1 {
 }
 
 .hero {
-    position: relative; /* Ensures child elements are positioned relative to it */
-    width: 100%;
+    position: relative;
+    width: 100vw;
     height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background: #111;
     overflow: hidden;
 }
 
@@ -67,9 +71,7 @@ h1 {
     top: 0;
     left: 0;
     width: 100vw;
-    /* height: 100vh; */
-    /* object-fit: cover; */
-    z-index: 0; /* Video stays behind */
+    z-index: 0; 
 }
 
 .hero-content {
@@ -77,10 +79,7 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centers it */
-    display: flex;
     flex-direction: column; /* Aligns text one after another */
-    justify-content: center;
-    align-items: center;
     text-align: center;
     color: white;
     z-index: 5; /* Ensures text stays above the video */
@@ -91,9 +90,32 @@ h1 {
     font-size: 140px;
 }
 
+/* TIM styling */
+.tim {
+    font-size: 170px;
+    position: absolute;
+    top:20vh;
+    left: 16vw;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: white;
+    z-index: 10;
+}
+
+/* RODENBROEKER styling */
+.rodenbroeker {
+    font-size: 170px;
+    position: absolute;
+    bottom: 20vh;
+    /* left: 5%; */
+    font-weight: bold;
+    color: white;
+    z-index: 10;
+}
+
 .about {
     width: 100vw;
-    height: 65vh;
+    height: 50vh;
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -104,7 +126,7 @@ h1 {
 
 .about h4 {
     margin: 5px 0; 
-    font-size: 64px;
+    font-size: 48px;
     font-weight: bold;
 }
 
@@ -124,13 +146,26 @@ h1 {
     line-height: inherit;
 }
 
+.blogheader {
+    width: 100vw; 
+    height: 480px;
+    background-image: url('assets/blognews_header.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
 
+.blogheader h2 {
+    
+    font-size: 140px;
+    line-height: 0.7;
+}
 
 .scroll-container {
     width: 100%;
-    height:100%;
+    height: auto; /* Instead of 100% */
     white-space: nowrap;
-    /* scrollbar-width: none; Hide scrollbar for Firefox */
+    overflow-x: auto; /* Allow horizontal scrolling only */
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -142,15 +177,22 @@ h1 {
     background-color: white;
 }
 
+.swiper {
+    overflow: hidden;
+}
+
 .swiper-slide {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Aligns contents to the top and bottom */
     align-items: flex-start; /* Aligns contents to the left */
     text-align: left;
-    text-decoration: none;
+
     width: 470px;
     height: 720px;
+}
+
+.swiper-slide a{
+    text-decoration: none;
 }
 
 .scroll-item img {
@@ -174,11 +216,11 @@ h1 {
     font-family: 'SpaceMono', sans-serif;
     color:black;
     font-weight:normal;
-    font-size: 17px;
+    font-size: 15px;
     white-space: normal; 
     word-wrap: break-word; 
-    padding:0 30px;
-    /* padding-bottom: 20px; */
+    padding:0 20px;
+    padding-bottom: 15px; /* Added bottom padding */
     text-decoration: none;
 }
 
