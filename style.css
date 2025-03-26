@@ -9,6 +9,11 @@
 }
 /* DESKTOP SIZE */
 
+html {
+    scroll-behavior: smooth;
+}
+
+
 html, body {
     overflow-x: hidden;
 }
@@ -153,12 +158,18 @@ h1 {
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat; 
+    position: relative;
 }
 
 .blogheader h2 {
-    
+    width: 100%;
     font-size: 140px;
     line-height: 0.7;
+    position: absolute;
+    bottom: 2vh;
+    left: 26vw;
+    margin: 0;
+    padding: 0;
 }
 
 .scroll-container {
