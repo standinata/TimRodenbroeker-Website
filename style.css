@@ -9,6 +9,46 @@
 }
 /* DESKTOP SIZE */
 
+/* Ensure the loader covers the full viewport */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Ensure full viewport width */
+    height: 100vh; /* Ensure full viewport height */
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: transform 0.6s ease-out; /* Slide-out animation */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    box-sizing: border-box; /* Ensure no padding or borders affect the size */
+}
+
+/* Ensure the video covers the full viewport, no cropping */
+#loader video {
+    width: 100vw; /* Set width to cover the full viewport */
+    height: 100vh; /* Set height to cover the full viewport */
+    object-fit: cover; /* Ensure the video covers the entire area */
+}
+
+/* When the page is loaded, move the loader above the viewport */
+body.loaded #loader {
+    transform: translateY(-100%); /* Moves the loader above the viewport */
+    pointer-events: none; /* Prevent interaction with hidden loader */
+}
+
+
+
+body.loaded .loader {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none; /* Optional, to make the loader completely non-interactive */
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -179,9 +219,6 @@ h1 {
     overflow-x: auto; /* Allow horizontal scrolling only */
 }
 
-.scroll-container::-webkit-scrollbar {
-    /* display: none; Hide scrollbar for Chrome, Safari */
-}
 
 .scroll-content {
     display: inline-flex;

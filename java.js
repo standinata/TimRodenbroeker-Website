@@ -1,3 +1,28 @@
+
+// Loader
+window.addEventListener("load", function () {
+    // Get the loader video element
+    const loaderVideo = document.getElementById("loader-video");
+
+    // Add an event listener for when the video ends
+    loaderVideo.addEventListener("ended", function () {
+        console.log("Video ended! Removing loader...");
+        
+        setTimeout(function () {
+            // Add the class "loaded" to the body to hide the loader
+            document.body.classList.add("loaded");
+        }, 300); 
+    });
+
+    // Make sure autoplay works
+    if (loaderVideo.readyState >= 1) {
+        loaderVideo.play();
+    }
+});
+
+
+
+// Typed animation
 document.addEventListener("DOMContentLoaded", function () {
     // Create an Intersection Observer to trigger the animation
     const aboutSection = document.querySelector('.about');
@@ -53,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(aboutSection);
 });
 
-
+// Swiper 
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,
     spaceBetween: 0,
