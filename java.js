@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Trigger the Typed.js animation when the About section enters the viewport
                 var typed1 = new Typed("#line1", {
                     strings: ["&lt;Tim Rodenbroeker is&gt;"], // First line
-                    typeSpeed: 50, // Speed of typing
+                    typeSpeed: 40, // Speed of typing
                     backSpeed: 30, // Speed of backspacing (not used)
                     showCursor: true, // Show cursor while typing
                     cursorChar: "|", // Custom cursor character
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         setTimeout(() => {
                             var typed2 = new Typed("#line2", {
                                 strings: ["&lt;a design educator&gt;"], // Second line
-                                typeSpeed: 50,
+                                typeSpeed: 40,
                                 showCursor: true,
                                 cursorChar: "|",
                                 onComplete: function (self) {
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     setTimeout(() => {
                                         var typed3 = new Typed("#line3", {
                                             strings: ["&lt;a/ freelance creative technologist&gt;"], // Third line
-                                            typeSpeed: 50,
+                                            typeSpeed: 40,
                                             showCursor: true,
                                             cursorChar: "|",
                                             onComplete: function (self) {
