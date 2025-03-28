@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
 // Typed animation
 document.addEventListener("DOMContentLoaded", function () {
     // Create an Intersection Observer to trigger the animation
-    const aboutSection = document.querySelector('.about');
+    const aboutSection = document.querySelector('.about-about');
     const options = {
         root: null, // Use the viewport as the root
         threshold: 0.8 // Trigger when 80% of the element is in view
