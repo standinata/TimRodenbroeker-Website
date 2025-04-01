@@ -1,4 +1,3 @@
-
 // Function to trigger the loader on nav link click
 function activateLoaderAndNavigate(event, link) {
     event.preventDefault(); // Prevent default behavior (immediate navigation)
@@ -35,83 +34,52 @@ window.addEventListener("load", function () {
     }, 500);
 });
 
+// Observer for INDEX PAGE Typed.js animation
+const aboutSection = document.querySelector(".about-about");
+if (aboutSection) {
+    const options = { root: null, threshold: 0.8 };
 
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Typed animation for the About page (Text in #about-text)
-var aboutText = [
-    "Is a design educator dedicated to building an online school and a community for Creative Coding. " +
-    "His teaching is rooted in a deeply critical attitude to harmful mythologies of ‘technological progress’ and " +
-    "offers alternative, positive perspectives on technological simplicity. For Tim, Creative Coding is both a simple " +
-    "and versatile tool – not just to develop design systems for a wide range of media formats. More importantly, to " +
-    "demystify information technology.\n\n" +
-    "As a freelance creative technologist, he has worked for clients such as The New York Times, IBM, " +
-    "the University of Pennsylvania, and Slate + Ash. Together with Dr. Martin Lorenz, he runs the design studio " +
-    "Coding Systems, which explores the synergies between Flexible Visual Systems and code. Tim is also part of " +
-    "the curatorial team for the Design in Motion Festival (Netherlands) and the International Creative Awards (Scotland)."
-];
-
-
-    // Check if the element #about-text exists and then apply the typing effect
-    if (document.querySelector("#about-text")) {
-        new Typed("#about-text", {
-            strings: aboutText,
-            typeSpeed: 25, // Speed of typing
-            showCursor: true, // Show cursor while typing
-            cursorChar: "|",
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                var typed1 = new Typed("#line1", {
+                    strings: ["&lt;Tim Rodenbroeker is&gt;"],
+                    typeSpeed: 40, 
+                    showCursor: true,
+                    cursorChar: "|",
+                    onComplete: function (self) {
+                        self.cursor.remove();
+                        setTimeout(() => {
+                            var typed2 = new Typed("#line2", {
+                                strings: ["&lt;a design educator&gt;"],
+                                typeSpeed: 40,
+                                showCursor: true,
+                                cursorChar: "|",
+                                onComplete: function (self) {
+                                    self.cursor.remove();
+                                    setTimeout(() => {
+                                        var typed3 = new Typed("#line3", {
+                                            strings: ["&lt;a/ freelance creative technologist&gt;"],
+                                            typeSpeed: 40,
+                                            showCursor: true,
+                                            cursorChar: "|",
+                                            onComplete: function (self) {
+                                                self.cursor.remove();
+                                            }
+                                        });
+                                    }, 300);
+                                }
+                            });
+                        }, 300);
+                    }
+                });
+                observer.unobserve(aboutSection);
+            }
         });
-    }
+    }, options);
 
-    // Observer for INDEX PAGE Typed.js animation (you can remove this if not using)
-    const aboutSection = document.querySelector(".about-about");
-    if (aboutSection) {
-        const options = { root: null, threshold: 0.8 };
-
-        const observer = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    var typed1 = new Typed("#line1", {
-                        strings: ["&lt;Tim Rodenbroeker is&gt;"],
-                        typeSpeed: 40, 
-                        showCursor: true,
-                        cursorChar: "|",
-                        onComplete: function (self) {
-                            self.cursor.remove();
-                            setTimeout(() => {
-                                var typed2 = new Typed("#line2", {
-                                    strings: ["&lt;a design educator&gt;"],
-                                    typeSpeed: 40,
-                                    showCursor: true,
-                                    cursorChar: "|",
-                                    onComplete: function (self) {
-                                        self.cursor.remove();
-                                        setTimeout(() => {
-                                            var typed3 = new Typed("#line3", {
-                                                strings: ["&lt;a/ freelance creative technologist&gt;"],
-                                                typeSpeed: 40,
-                                                showCursor: true,
-                                                cursorChar: "|",
-                                                onComplete: function (self) {
-                                                    self.cursor.remove();
-                                                }
-                                            });
-                                        }, 300);
-                                    }
-                                });
-                            }, 300);
-                        }
-                    });
-                    observer.unobserve(aboutSection);
-                }
-            });
-        }, options);
-
-        observer.observe(aboutSection);
-    }
-});
-
-
-
+    observer.observe(aboutSection);
+}
 
 // Swiper 
 var swiper = new Swiper(".mySwiper", {

@@ -320,13 +320,7 @@ h1 {
 }
 
 .about_tim {
-    /* padding-left: 31vw; */
-    /* padding-top: 0.1em; */
-    /* position:absolute; */
-    /* position: relative; */
-    /* justify-content: right; */
-    /* right:0; */
-    padding-right: 1.6em;
+    padding-right: 1.8em;
     
 }
 
@@ -347,30 +341,51 @@ h1 {
 }
 
 .about-content-wrap {
-    padding-right: 6em;
+    /* padding-right: 6em; */
     justify-content: right;
+    /* width:100vw; */
+}
+
+.about-content-wrap p{
+    margin:0;
 }
 
 .about-content-1 {
     position: relative;
-    z-index: 1; /* Ensure text stays on top */
+    z-index: 1; 
     color: white;
-    padding: 20px;
-    width: 100%;
+    padding-top: 5em;
+    /* width: 50%; */
     height: 100vh; 
-    justify-content: center; 
-    align-items: center; 
+    justify-items: center;
+}
+
+.about-content-1 p {
+    padding-right:2em;
+}
+
+.about-content-2 {
+    position: relative;
+    z-index: 1; 
+    padding-left: 46vw;
+    right:0;
+    color: white;
+    padding-top: 6em;
+    width: 47%;
+    height: 100vh; 
+    justify-items: left;
+    text-align: left;
 }
 
 .about-content-1 img {
-    width: 100%;
+    width: 59%;
     height: 100%;
     object-fit: cover; /* Make sure the image covers the entire space */
     opacity: 0.2; /* Reduced opacity for the image */
     filter: brightness(70%); /* Make the image darker */
     position: absolute; /* Position the image behind the text */
     top: 0;
-    left: 0;
+    right: 0;
     z-index: -1; /* Keep the image behind the text */
 }
 
