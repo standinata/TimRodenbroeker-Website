@@ -7,6 +7,57 @@
     font-family: 'SpaceMono';
     src: url('assets/SpaceMono-Regular.ttf') format('opentype');
 }
+
+/* Disable default cursor for all elements that you want to customize */
+a, button, input, textarea {
+    cursor: none; /* Turn off the default cursor */
+}
+
+/* Keep the custom cursor visible for these elements */
+a:hover, button:hover, input:hover, textarea:hover {
+    cursor: none; /* Ensure the custom cursor still works on hover */
+}
+
+
+/* Global minimalist scrollbar styling */
+* {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #484848 transparent; /* White scrollbar, no background */
+}
+
+*::-webkit-scrollbar {
+    width: 4px; /* Thin scrollbar width */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: white; /* White scrollbar thumb */
+    border-radius: 10px; /* Rounded edges for the scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent; /* No background for the track */
+}
+
+* {
+    cursor: none; /* This would hide the default cursor */
+}
+
+
+/* Styling for the custom cursor */
+.custom-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    opacity: 0.8;
+    transition: width 0.15s, height 0.15s, opacity 0.15s;
+    z-index: 998;
+}
 /* DESKTOP SIZE */
 
 /* Ensure the loader covers the full viewport */
@@ -49,6 +100,8 @@ body.loaded .loader {
     pointer-events: none; /* Optional, to make the loader completely non-interactive */
 }
 
+
+
 html {
     scroll-behavior: smooth;
 }
@@ -56,6 +109,7 @@ html {
 
 html, body {
     overflow-x: hidden;
+    cursor: none;
 }
 
 header {
@@ -75,6 +129,7 @@ body {
     line-height: 1.6;
     color: white;
     background-color: #232122;
+    
 }
 
 nav {
@@ -130,13 +185,20 @@ p {
     z-index: 1;
 }
 
-.hero-video {
+.hero-video-desktop {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     z-index: 0; 
+    display: block;
 }
+
+.hero-video-tablet {
+    display:none;
+}
+
+
 
 .hero-content {
     position: absolute; /* Ensures it overlays the video */
@@ -164,7 +226,7 @@ h1 {
     font-weight: bold;
     color: white;
     z-index: 10;
-    cursor: default;
+    /* cursor: default; */
 }
 
 /* RODENBROEKER styling */
@@ -176,7 +238,7 @@ h1 {
     font-weight: bold;
     color: white;
     z-index: 10;
-    cursor: default;
+    /* cursor: default; */
 }
 
 .about-about {
@@ -188,6 +250,7 @@ h1 {
     align-items: center; 
     text-align: center;
     box-sizing: border-box; 
+    background-color: #232122;;
 }
 
 .about-about h4 {
@@ -220,7 +283,7 @@ h1 {
     background-position: center; 
     background-repeat: no-repeat; 
     position: relative;
-    cursor: default;
+    /* cursor: default; */
 }
 
 .blogheader h2 {
@@ -262,13 +325,13 @@ h1 {
 
 .swiper-slide a{
     text-decoration: none;
-    cursor: grab;
+    /* cursor: grab; */
 }
 
 .swiper-slide a:hover{
     font-style: italic ;
     background-color: #1100FE;
-    color: white;
+    /* color: white; */
 } 
  
 
@@ -277,6 +340,7 @@ h1 {
     width: 100%;
     height: 500px;
     object-fit: cover;
+    /* cursor: grab; */
 }
 
 .scroll-item h5 {
@@ -290,6 +354,11 @@ h1 {
     text-decoration: none;
 }
 
+.scroll-item h5:hover {
+    color: white;
+}
+
+
 .scroll-item p {
     font-family: 'SpaceMono', sans-serif;
     color:black;
@@ -300,13 +369,14 @@ h1 {
     padding:0 20px;
     padding-bottom: 15px; /* Added bottom padding */
     text-decoration: none;
+
+}
+
+.scroll-item p:hover {
+    color: white;
 }
 
 
-/* TABLET SIZE */
-
-
-/* MOBILE SIZE */
 
 /* ---------------------ABOUT PAGE */
 .about {
@@ -320,12 +390,21 @@ h1 {
 }
 
 .about_tim {
-    padding-right: 1.8em;
-    
-}
+    font-size: 140px;
+    position: relative;
+    padding-right:13vw;
+  }
+  
+  #typed-tim {
+    color: white;
+    font-weight: bold;
+    display: inline;
+  }
+  
+
+
 
 .about-sticky {
-    /* position: sticky; */
     justify-items: right;
     top: 0;
     left:0;
@@ -333,17 +412,17 @@ h1 {
     width: 25%;
     min-width: 994px;
     background-image: url('assets/about-sticky.png');
-    background-size: contain; /* no cropping */
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: left center; /* stick it nicely */
+    background-position: left center;
     overflow: hidden;
     position:absolute;
 }
 
 .about-content-wrap {
-    /* padding-right: 6em; */
+    display: relative;
     justify-content: right;
-    /* width:100vw; */
+    width:100vw;
 }
 
 .about-content-wrap p{
@@ -354,10 +433,13 @@ h1 {
     position: relative;
     z-index: 1; 
     color: white;
-    padding-top: 5em;
-    /* width: 50%; */
+    padding-top: 11.5em;
+    width: 50%;
     height: 100vh; 
     justify-items: center;
+    text-align: left; /* Align text to the left */
+    margin-left: auto; /* Push the content to the right */
+    margin-right: 2em; /* Add some spacing from the right edge */
 }
 
 .about-content-1 p {
@@ -372,13 +454,13 @@ h1 {
     color: white;
     padding-top: 6em;
     width: 47%;
-    height: 100vh; 
+    height: 90vh; 
     justify-items: left;
     text-align: left;
 }
 
 .about-content-1 img {
-    width: 59%;
+    /* width: 59%; */
     height: 100%;
     object-fit: cover; /* Make sure the image covers the entire space */
     opacity: 0.2; /* Reduced opacity for the image */
@@ -401,9 +483,9 @@ h1 {
 }
 
 #bio-text {
-    font-size: 18px;
+    font-size: 24px;
     line-height: 1.6;
-    padding: 0;
+    padding-bottom:0.3em;
     margin: 0;
 }
 
@@ -411,7 +493,476 @@ h1 {
     padding-left:30px;
     font-size: 18px;
     line-height: 1.6;
-    padding-bottom: 2em;
+    padding-bottom: 4em;
     margin: 0;
-    word-wrap: break-word; 
+    word-wrap: break-word;
+    color:#C4C4C4; 
+
 }
+
+/* ------------------------------------COMMUNITY PAGE */
+.courses {
+    width: 100vw;
+    height: 100vh;
+    display: flex; 
+    flex-direction: row; /* Change to row to organize items side by side */
+    padding: 0;
+    margin: 0;
+    /* position: relative; */
+}
+
+.courses_text {
+    padding-right: 1.8em;
+    padding-top:1.3em;
+}
+
+.courses-sticky {
+    /* position: sticky; */
+    justify-items: right;
+    top: 0;
+    left:0;
+    height: 100vh;
+    width: 25%;
+    min-width: 994px;
+    background-image: url('assets/courses-sticky.png');
+    background-size: contain; /* no cropping */
+    background-repeat: no-repeat;
+    background-position: left center; /* stick it nicely */
+    overflow: hidden;
+    position:absolute;
+}
+
+.courses-content-wrap {
+    display: relative;
+    justify-content: right;
+    width:100vw;
+    height:auto;
+}
+
+.courses-content-wrap p{
+    margin:0;
+}
+
+.courses-content-1 {
+    position: relative;
+    z-index: 1; 
+    color: white;
+    padding-top: 7em;
+    padding-bottom:5em;
+    width: 50%;
+    /* height: 100vh;  */
+    justify-items: center;
+    text-align: left; /* Align text to the left */
+    margin-left: auto; /* Push the content to the right */
+    margin-right: 2em; /* Add some spacing from the right edge */
+}
+
+.courses_tumbnail-left{
+    width:420px;
+    height:320px;
+    margin-right:10em;
+    margin-bottom:8em;
+    overflow: hidden; /* Prevents overflow */
+    position: relative;
+}
+
+.courses_tumbnail-right{
+    width:420px;
+    height:320px;
+    margin-left:10em;
+    margin-bottom:8em;
+    overflow: hidden; /* Prevents overflow */
+    position: relative;
+}
+
+.courses_tumbnail-left video,
+.courses_tumbnail-right video {
+    width: 100%; /* Ensure the video takes up the full width of the parent div */
+    height: 100%; /* Ensure the video takes up the full height of the parent div */
+    object-fit: cover; /* Ensures the video covers the entire div without distortion */
+    display: block; /* Removes any inline spacing issues */
+}
+
+/* Position the video and overlay */
+.courses_tumbnail-left,
+.courses_tumbnail-right {
+    position: relative; /* Required for the overlay to position correctly */
+    overflow: hidden; /* Prevent the overlay from spilling outside the container */
+}
+
+/* Style the video */
+.courses_tumbnail-left video,
+.courses_tumbnail-right video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the container */
+    display: block;
+}
+
+/* Style the overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 255); /* Solid blue with transparency */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.2s ease; /* Only fade in/out the background */
+    z-index: 1; /* Ensure it appears above the video */
+    cursor: pointer; /* Make the overlay clickable */
+    box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
+}
+
+/* Overlay text (bottom-left) */
+.overlay-text {
+    position: absolute;
+    bottom: 10px; /* Position it at the bottom */
+    left: 20px; /* Position it on the left */
+    color: white;
+    font-size: 24px;
+    line-height: 1.4;
+    font-family: 'SpaceMono', sans-serif;
+    text-align: left; /* Align text to the left */
+    margin: 0;
+    transform: translateY(100%); /* Start below the container */
+    transition: transform 0.4s ease; /* Smooth slide-in effect */
+}
+
+/* Overlay arrow (top-right) */
+.overlay-arrow {
+    position: absolute;
+    top: 10px; /* Keep it 10px from the top */
+    right: 10px; /* Keep it 10px from the right */
+    color: white;
+    font-size: 8em; /* Set the desired font size */
+    font-family: 'SpaceMono', sans-serif;
+    line-height: 0.5; /* Prevent extra vertical spacing caused by font size */
+    margin: 0;
+    transform: translateY(-100%); /* Start above the container */
+    transition: transform 0.4s ease; /* Smooth slide-in effect */
+}
+
+/* Make the entire overlay clickable */
+.overlay-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Ensure it covers the entire overlay */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Hover effect */
+.courses_tumbnail-left:hover .overlay,
+.courses_tumbnail-right:hover .overlay {
+    opacity: 1; /* Fade in the overlay background */
+}
+
+.courses_tumbnail-left:hover .overlay-text,
+.courses_tumbnail-right:hover .overlay-text {
+    transform: translateY(0); /* Slide the text into place */
+}
+
+.courses_tumbnail-left:hover .overlay-arrow,
+.courses_tumbnail-right:hover .overlay-arrow {
+    transform: translateY(0); /* Slide the arrow into place */
+}
+
+
+
+/* Tablet Version (inspect-width: 960px) */
+@media screen and (max-width: 1200px) {
+
+
+    
+    nav ul li a {
+        font-size: 20px;
+    }
+
+/* -------------------LANDING PAGE */
+
+    .hero-video-desktop {
+        display: none; /* Hide the desktop video on smaller screens */
+    }
+
+    .hero-video-tablet {
+        display:block;
+    }
+
+    .hero-content h1{
+        font-size: 120px;
+    }
+
+    .hero-content {
+        left: 30%;
+    }
+
+
+    .tim{
+        padding-left:2em;
+    }
+
+    .blogheader{
+        width:100vw;
+        background-image: url(assets/blognews_tablet.png);
+        background-size: contain; /* Ensure the image covers the entire width */
+        background-repeat: no-repeat;
+    }
+
+    .scroll-container {
+        overflow: visible; /* No scroll */
+      }
+    
+      .scroll-content {
+        display: flex;
+        flex-direction: column; /* Stack slides vertically */
+        gap: 2.5em;
+        width: 100%;
+        height:100%;
+        padding-bottom: 3em;
+      }
+    
+      .scroll-content > * {
+        width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+    .swiper-slide {
+        height:100%;
+        min-width:100vw;
+    }
+
+    .swiper-slide a {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        text-align: left;
+        gap: 10px;
+        width:100%;
+      }
+    
+      .swiper-slide a img {
+        order: 1 !important;
+      }
+    
+      .swiper-slide a h5 {
+        margin:0;
+        padding-top:0.5em;
+        order: 2 !important;
+      }
+    
+      .swiper-slide a p {
+        padding-bottom:0;
+        margin-top:0;
+        padding: 0 30px;
+        order: 3 !important;
+      }
+
+      .swiper-slide a:hover {
+        background-color: white;
+      }
+
+      .swiper-slide a h5:hover {
+        color: #1100FE;
+      }
+
+
+      .swiper-slide a p:hover {
+        color: #1100FE;
+      }
+
+
+
+    
+/* --------------------ABOUT PAGE */
+
+    .about {
+        position: relative;
+    }
+
+    .about-sticky h1 {
+        font-size: 120px;
+
+    }
+
+    .about-sticky {
+        width: 100vw;
+        height: auto;
+        background-image: url('assets/mb-tim.png');
+        background-size: contain; /* Ensure the image covers the entire width */
+        background-repeat: no-repeat;
+        background-position: center; /* Center the image */
+        justify-items: left;
+        padding-left:5em;
+    }
+
+    .about-content-wrap {
+        margin-top:25vh;
+
+    }
+
+    .about-content-1 {
+        width: auto;
+        padding-left: 5em;
+        padding-right: 5em;
+        padding-top:5vh;
+        height:100%;
+        overflow: hidden;
+    }
+
+    .about-content-1 img {
+        
+        width: auto; /* Maintain the image's original width */
+        height: auto; /* Maintain the image's original height */
+        max-width: none; /* Prevent scaling based on parent container */
+        max-height: none; /* Prevent scaling based on parent container */
+        object-fit: none; /* Prevent resizing to fit the container */
+        top: 0; /* Position at the top */
+        left: 0; /* Position at the left */
+    }
+
+    .about-content-2 {
+        width:auto;
+        height: 100%;
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+/* --------------------COURSES PAGE */
+    .courses {
+        position: relative;
+    }
+
+    .courses_text {
+        padding-top: 0;
+    }
+
+    .courses-sticky h1 {
+        font-size: 120px;
+    }
+
+    .courses-sticky {
+        width: 100vw;
+        height: auto;
+        background-image: url('assets/mb-courses.png');
+        background-size: contain; /* Ensure the image covers the entire width */
+        background-repeat: no-repeat;
+        background-position: center; /* Center the image */
+        justify-items: left;
+        padding-left:5em;
+    }
+
+    .courses-content-wrap {
+        margin-top:25vh;
+
+    }
+
+    .courses-content-1 {
+        width:100%;
+        padding-top:0;
+    }
+
+    .courses_tumbnail-left,
+    .courses_tumbnail-right {
+        width: calc(100% - 40px); /* Reduce width to account for padding */
+        height: 650px; /* Maintain height */
+        margin: 0 auto; /* Center the divs */
+        margin-bottom: 2em;;
+        padding: 0; /* No internal padding */
+        position: relative; /* Ensure the overlay stays within bounds */
+    }
+
+
+    .overlay-text {
+        font-size: 32px;
+    }
+}
+
+
+/* Mobile Version (inspect-width: 475px) */
+@media (max-width: 600px) {
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: auto;
+        overflow-x: hidden; /* Only prevent sideways scroll */
+    }
+
+    .hero-content h1{
+        font-size:80px;
+    }
+
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #232122;
+    }
+
+    .rodenbroeker {
+        font-size: 80px;
+        position: absolute; /* Changed from fixed to absolute */
+        top: 27%; /* You can fine-tune this */
+        transform: translate(-25%, -50%);
+        text-align: center;
+        margin: 0;
+        z-index: 10;
+        color: white;
+    }
+
+    .tim {
+        font-size: 100px;
+        position: absolute; /* Changed from fixed to absolute */
+        top: 40%; /* You can fine-tune this */
+        padding-right:5em;
+        left:0;
+        text-align: center;
+        margin: 0;
+        z-index: 10;
+        padding:0;
+        color: white;
+    }
+
+    .hero-video-desktop,
+    .hero-video-tablet {
+        display: none; /* Hide desktop and tablet videos on mobile */
+    }
+
+
+    .hero-video-mobile {
+        display: block;
+        width: 100vw;
+        height: auto;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        z-index: 5;
+    }
+
+
+}
+
+
