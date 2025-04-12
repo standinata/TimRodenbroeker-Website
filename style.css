@@ -58,41 +58,33 @@ a:hover, button:hover, input:hover, textarea:hover {
     transition: width 0.15s, height 0.15s, opacity 0.15s;
     z-index: 998;
 }
-/* DESKTOP SIZE */
 
-/* Ensure the loader covers the full viewport */
+/* DESKTOP SIZE */
 
 #loader {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;  /* Ensure full viewport width */
-    height: 100vh; /* Ensure full viewport height */
-    background-color: #232122; /* Grey background with slight opacity */
+    width: 100vw;  
+    height: 100vh; 
+    background-color: #232122;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     opacity: 1;
     transition: transform 0.6s ease-out; /* Slide-up animation */
-    margin: 0; /* Remove any default margin */
-    padding: 0; /* Remove any default padding */
-    box-sizing: border-box; /* Ensure no padding or borders affect the size */
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
 }
 
-/* Optional: Style for loader content (e.g., spinner, text) */
-.loader-content {
-    font-size: 2rem;
-    color: white;
-    text-align: center;
-}
 
 /* When the page is loaded, move the loader above the viewport */
 body.loaded #loader {
     transform: translateY(-100%); /* Moves the loader up above the viewport */
     pointer-events: none; /* Prevent interaction with hidden loader */
 }
-
 
 body.loaded .loader {
     visibility: hidden;
@@ -134,7 +126,7 @@ body {
 
 nav {
     padding: 0 20px;
-    background-color: transparent; /* Make the background invisible */
+    background-color: transparent;
     z-index: 10;
 }
 
@@ -216,31 +208,6 @@ h1 {
     font-size: 140px;
 }
 
-/* TIM styling */
-.tim {
-    font-size: 170px;
-    position: absolute;
-    top:20vh;
-    left: 16vw;
-    transform: translate(-50%, -50%);
-    font-weight: bold;
-    color: white;
-    z-index: 10;
-    /* cursor: default; */
-}
-
-/* RODENBROEKER styling */
-.rodenbroeker {
-    font-size: 170px;
-    position: absolute;
-    bottom: 20vh;
-    /* left: 5%; */
-    font-weight: bold;
-    color: white;
-    z-index: 10;
-    /* cursor: default; */
-}
-
 .about-about {
     width: 100vw;
     height: 50vh;
@@ -283,7 +250,6 @@ h1 {
     background-position: center; 
     background-repeat: no-repeat; 
     position: relative;
-    /* cursor: default; */
 }
 
 .blogheader h2 {
@@ -395,6 +361,7 @@ h1 {
     padding-right:13vw;
   }
   
+
   #typed-tim {
     color: white;
     font-weight: bold;
@@ -437,9 +404,9 @@ h1 {
     width: 50%;
     height: 100vh; 
     justify-items: center;
-    text-align: left; /* Align text to the left */
-    margin-left: auto; /* Push the content to the right */
-    margin-right: 2em; /* Add some spacing from the right edge */
+    text-align: left; 
+    margin-left: auto; 
+    margin-right: 2em; 
 }
 
 .about-content-1 p {
@@ -700,14 +667,10 @@ h1 {
     }
 
 
-    .tim{
-        padding-left:2em;
-    }
-
     .blogheader{
         width:100vw;
         background-image: url(assets/blognews_tablet.png);
-        background-size: contain; /* Ensure the image covers the entire width */
+        background-size: contain;
         background-repeat: no-repeat;
     }
 
@@ -885,6 +848,15 @@ h1 {
 /* Mobile Version (inspect-width: 475px) */
 @media (max-width: 600px) {
 
+    sticky-nav {
+        padding:0;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+
     html, body {
         margin: 0;
         padding: 0;
@@ -893,7 +865,7 @@ h1 {
     }
 
     .hero-content h1{
-        font-size:80px;
+        font-size:72px;
     }
 
 
@@ -908,30 +880,6 @@ h1 {
         padding: 20px;
         box-sizing: border-box;
         background-color: #232122;
-    }
-
-    .rodenbroeker {
-        font-size: 80px;
-        position: absolute; /* Changed from fixed to absolute */
-        top: 27%; /* You can fine-tune this */
-        transform: translate(-25%, -50%);
-        text-align: center;
-        margin: 0;
-        z-index: 10;
-        color: white;
-    }
-
-    .tim {
-        font-size: 100px;
-        position: absolute; /* Changed from fixed to absolute */
-        top: 40%; /* You can fine-tune this */
-        padding-right:5em;
-        left:0;
-        text-align: center;
-        margin: 0;
-        z-index: 10;
-        padding:0;
-        color: white;
     }
 
     .hero-video-desktop,
@@ -961,6 +909,19 @@ h1 {
         text-align: center;
         z-index: 5;
     }
+
+/* ABOUT PAGE */
+    .about-content-wrap{
+        margin-top: 21vh;
+    }
+
+    .about-content-1 {
+        height:fit-content;
+        padding-bottom: 5vh;
+        position: relative;
+    }
+
+
 
 
 }
