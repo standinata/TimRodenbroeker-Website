@@ -10,36 +10,36 @@
 
 /* Disable default cursor for all elements that you want to customize */
 a, button, input, textarea {
-    cursor: none; /* Turn off the default cursor */
+    cursor: none; 
 }
 
 /* Keep the custom cursor visible for these elements */
 a:hover, button:hover, input:hover, textarea:hover {
-    cursor: none; /* Ensure the custom cursor still works on hover */
+    cursor: none;
 }
 
 
-/* Global minimalist scrollbar styling */
+/* Global styling */
 * {
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: #484848 transparent; /* White scrollbar, no background */
+    scrollbar-width: thin; 
+    scrollbar-color: #484848 transparent; 
 }
 
 *::-webkit-scrollbar {
-    width: 4px; /* Thin scrollbar width */
+    width: 4px; 
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: white; /* White scrollbar thumb */
-    border-radius: 10px; /* Rounded edges for the scrollbar */
+    background-color: white; 
+    border-radius: 10px; 
 }
 
 *::-webkit-scrollbar-track {
-    background: transparent; /* No background for the track */
+    background: transparent; 
 }
 
 * {
-    cursor: none; /* This would hide the default cursor */
+    cursor: none; 
 }
 
 
@@ -378,7 +378,7 @@ h1 {
     height: 100vh;
     width: 25%;
     min-width: 994px;
-    background-image: url('assets/about-sticky.png');
+    /* background-image: url('assets/about-sticky.png'); */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left center;
@@ -472,10 +472,9 @@ h1 {
     width: 100vw;
     height: 100vh;
     display: flex; 
-    flex-direction: row; /* Change to row to organize items side by side */
+    flex-direction: row; 
     padding: 0;
     margin: 0;
-    /* position: relative; */
 }
 
 .courses_text {
@@ -484,17 +483,16 @@ h1 {
 }
 
 .courses-sticky {
-    /* position: sticky; */
     justify-items: right;
     top: 0;
     left:0;
     height: 100vh;
     width: 25%;
     min-width: 994px;
-    background-image: url('assets/courses-sticky.png');
-    background-size: contain; /* no cropping */
-    background-repeat: no-repeat;
-    background-position: left center; /* stick it nicely */
+    /* background-image: url('assets/courses-sticky.png');
+    background-size: contain;
+    background-repeat: no-repeat; */
+    background-position: left center; 
     overflow: hidden;
     position:absolute;
 }
@@ -517,11 +515,10 @@ h1 {
     padding-top: 7em;
     padding-bottom:5em;
     width: 50%;
-    /* height: 100vh;  */
     justify-items: center;
-    text-align: left; /* Align text to the left */
-    margin-left: auto; /* Push the content to the right */
-    margin-right: 2em; /* Add some spacing from the right edge */
+    text-align: left; 
+    margin-left: auto; 
+    margin-right: 2em; 
 }
 
 .courses_tumbnail-left{
@@ -529,7 +526,7 @@ h1 {
     height:320px;
     margin-right:10em;
     margin-bottom:8em;
-    overflow: hidden; /* Prevents overflow */
+    overflow: hidden; 
     position: relative;
 }
 
@@ -538,103 +535,99 @@ h1 {
     height:320px;
     margin-left:10em;
     margin-bottom:8em;
-    overflow: hidden; /* Prevents overflow */
+    overflow: hidden; 
     position: relative;
 }
 
 .courses_tumbnail-left video,
 .courses_tumbnail-right video {
-    width: 100%; /* Ensure the video takes up the full width of the parent div */
-    height: 100%; /* Ensure the video takes up the full height of the parent div */
-    object-fit: cover; /* Ensures the video covers the entire div without distortion */
-    display: block; /* Removes any inline spacing issues */
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
 }
 
-/* Position the video and overlay */
+
 .courses_tumbnail-left,
 .courses_tumbnail-right {
-    position: relative; /* Required for the overlay to position correctly */
-    overflow: hidden; /* Prevent the overlay from spilling outside the container */
+    position: relative; 
+    overflow: hidden;
 }
 
-/* Style the video */
 .courses_tumbnail-left video,
 .courses_tumbnail-right video {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the container */
+    object-fit: cover; 
     display: block;
 }
 
-/* Style the overlay */
+
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 255); /* Solid blue with transparency */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.2s ease; /* Only fade in/out the background */
-    z-index: 1; /* Ensure it appears above the video */
-    cursor: pointer; /* Make the overlay clickable */
-    box-sizing: border-box; /* Ensure padding doesn't affect dimensions */
+    background-color: rgba(0, 0, 255);
+    opacity: 0; 
+    transition: opacity 0.2s ease; 
+    z-index: 1; 
+    cursor: pointer; 
+    box-sizing: border-box; 
 }
 
-/* Overlay text (bottom-left) */
 .overlay-text {
     position: absolute;
-    bottom: 10px; /* Position it at the bottom */
-    left: 20px; /* Position it on the left */
+    bottom: 10px;
+    left: 20px; 
     color: white;
     font-size: 24px;
     line-height: 1.4;
     font-family: 'SpaceMono', sans-serif;
-    text-align: left; /* Align text to the left */
+    text-align: left; 
     margin: 0;
-    transform: translateY(100%); /* Start below the container */
-    transition: transform 0.4s ease; /* Smooth slide-in effect */
+    transform: translateY(100%); 
+    transition: transform 0.4s ease; 
 }
 
-/* Overlay arrow (top-right) */
 .overlay-arrow {
     position: absolute;
-    top: 10px; /* Keep it 10px from the top */
-    right: 10px; /* Keep it 10px from the right */
+    top: 10px;
+    right: 10px; 
     color: white;
-    font-size: 8em; /* Set the desired font size */
+    font-size: 8em; 
     font-family: 'SpaceMono', sans-serif;
-    line-height: 0.5; /* Prevent extra vertical spacing caused by font size */
+    line-height: 0.5;
     margin: 0;
-    transform: translateY(-100%); /* Start above the container */
-    transition: transform 0.4s ease; /* Smooth slide-in effect */
+    transform: translateY(-100%); 
+    transition: transform 0.4s ease; 
 }
 
-/* Make the entire overlay clickable */
 .overlay-link {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2; /* Ensure it covers the entire overlay */
-    text-decoration: none; /* Remove underline */
+    z-index: 2; 
+    text-decoration: none; 
 }
 
 /* Hover effect */
 .courses_tumbnail-left:hover .overlay,
 .courses_tumbnail-right:hover .overlay {
-    opacity: 1; /* Fade in the overlay background */
+    opacity: 1; 
 }
 
 .courses_tumbnail-left:hover .overlay-text,
 .courses_tumbnail-right:hover .overlay-text {
-    transform: translateY(0); /* Slide the text into place */
+    transform: translateY(0); 
 }
 
 .courses_tumbnail-left:hover .overlay-arrow,
 .courses_tumbnail-right:hover .overlay-arrow {
-    transform: translateY(0); /* Slide the arrow into place */
+    transform: translateY(0); 
 }
 
 
@@ -753,23 +746,26 @@ h1 {
 
     .about-sticky {
         width: 100vw;
-        height: auto;
-        background-image: url('assets/mb-tim.png');
-        background-size: contain; /* Ensure the image covers the entire width */
+        background-size: contain; 
         background-repeat: no-repeat;
-        background-position: center; /* Center the image */
+        background-position: center; 
         justify-items: left;
         padding-left:5em;
     }
 
+    .about_tim {
+        bottom: 190px;
+    }
+
     .about-content-wrap {
-        margin-top:25vh;
+        margin-top:17em;
 
     }
 
     .about-content-1 {
         width: auto;
         padding-left: 5em;
+        margin-right:0;
         padding-right: 5em;
         padding-top:5vh;
         height:100%;
@@ -794,6 +790,7 @@ h1 {
         padding-right: 5em;
     }
 
+
 /* --------------------COURSES PAGE */
     .courses {
         position: relative;
@@ -809,18 +806,20 @@ h1 {
 
     .courses-sticky {
         width: 100vw;
-        height: auto;
-        background-image: url('assets/mb-courses.png');
-        background-size: contain; /* Ensure the image covers the entire width */
+        background-size: contain; 
         background-repeat: no-repeat;
-        background-position: center; /* Center the image */
+        background-position: center; 
         justify-items: left;
         padding-left:5em;
     }
 
-    .courses-content-wrap {
-        margin-top:25vh;
+    .courses_text {
+        position: relative; 
+        top:-180px;
+    }
 
+    .courses-content-wrap {
+        margin-top:17em;
     }
 
     .courses-content-1 {
@@ -831,11 +830,11 @@ h1 {
     .courses_tumbnail-left,
     .courses_tumbnail-right {
         width: calc(100% - 40px); /* Reduce width to account for padding */
-        height: 650px; /* Maintain height */
-        margin: 0 auto; /* Center the divs */
+        height: 650px; 
+        margin: 0 auto; 
         margin-bottom: 2em;;
-        padding: 0; /* No internal padding */
-        position: relative; /* Ensure the overlay stays within bounds */
+        padding: 0; 
+        position: relative; 
     }
 
 
