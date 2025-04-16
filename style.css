@@ -352,13 +352,13 @@ h1 {
     flex-direction: row; /* Change to row to organize items side by side */
     padding: 0;
     margin: 0;
-    /* position: relative; */
 }
 
 .about_tim {
     font-size: 140px;
     position: relative;
-    padding-right:13vw;
+    /* padding-right:13vw; */
+    padding-left:37vw;
   }
   
 
@@ -372,18 +372,22 @@ h1 {
 
 
 .about-sticky {
-    justify-items: right;
     top: 0;
     left:0;
     height: 100vh;
-    width: 25%;
-    min-width: 994px;
-    /* background-image: url('assets/about-sticky.png'); */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: left center;
+    width: 100%;
     overflow: hidden;
     position:absolute;
+}
+
+.about-sticky img {
+    width: auto; 
+    height: 100%; 
+    object-fit: contain; 
+    position: absolute; 
+    top: 0;
+    left: 0; 
+    min-width:994px;
 }
 
 .about-content-wrap {
@@ -406,17 +410,17 @@ h1 {
     justify-items: center;
     text-align: left; 
     margin-left: auto; 
-    margin-right: 2em; 
 }
 
 .about-content-1 p {
     padding-right:2em;
+    padding-left:2em;
 }
 
 .about-content-2 {
     position: relative;
     z-index: 1; 
-    padding-left: 46vw;
+    padding-left: 52vw;
     right:0;
     color: white;
     padding-top: 6em;
@@ -427,20 +431,20 @@ h1 {
 }
 
 .about-content-1 img {
-    /* width: 59%; */
+    width: 100%;
     height: 100%;
-    object-fit: cover; /* Make sure the image covers the entire space */
-    opacity: 0.2; /* Reduced opacity for the image */
-    filter: brightness(70%); /* Make the image darker */
-    position: absolute; /* Position the image behind the text */
+    object-fit: cover; 
+    opacity: 0.2;
+    filter: brightness(70%); 
+    position: absolute; 
     top: 0;
     right: 0;
-    z-index: -1; /* Keep the image behind the text */
+    z-index: -1; 
 }
 
 #about-text {
     position: relative;
-    z-index: 1; /* Ensure text is above the image */
+    z-index: 1; 
     font-size: 18px;
     line-height: 1.6;
     padding-left: 0;
@@ -478,24 +482,34 @@ h1 {
 }
 
 .courses_text {
-    padding-right: 1.8em;
+    padding-left: 3em;
     padding-top:1.3em;
+    z-index: 50;
+    position: relative;
+    max-width: 300px;
 }
 
+
 .courses-sticky {
-    justify-items: right;
     top: 0;
     left:0;
     height: 100vh;
-    width: 25%;
-    min-width: 994px;
-    /* background-image: url('assets/courses-sticky.png');
-    background-size: contain;
-    background-repeat: no-repeat; */
-    background-position: left center; 
+    width: 100%;
     overflow: hidden;
     position:absolute;
 }
+
+.courses-sticky img {
+    width: auto; 
+    height: 100%; 
+    object-fit: contain; 
+    position: absolute; 
+    top: 0;
+    left: 0; 
+    min-width:994px;
+}
+
+
 
 .courses-content-wrap {
     display: relative;
@@ -746,6 +760,7 @@ h1 {
 
     .about-sticky {
         width: 100vw;
+        max-height:275px;
         background-size: contain; 
         background-repeat: no-repeat;
         background-position: center; 
@@ -754,7 +769,9 @@ h1 {
     }
 
     .about_tim {
-        bottom: 190px;
+        top: 100px; 
+        padding-left:5vw;
+
     }
 
     .about-content-wrap {
@@ -774,13 +791,13 @@ h1 {
 
     .about-content-1 img {
         
-        width: auto; /* Maintain the image's original width */
-        height: auto; /* Maintain the image's original height */
-        max-width: none; /* Prevent scaling based on parent container */
-        max-height: none; /* Prevent scaling based on parent container */
-        object-fit: none; /* Prevent resizing to fit the container */
-        top: 0; /* Position at the top */
-        left: 0; /* Position at the left */
+        width: auto; 
+        height: auto; 
+        max-width: none; 
+        max-height: none; 
+        object-fit: none; 
+        top: 0; 
+        left: 0; 
     }
 
     .about-content-2 {
@@ -806,6 +823,7 @@ h1 {
 
     .courses-sticky {
         width: 100vw;
+        max-height:275px;
         background-size: contain; 
         background-repeat: no-repeat;
         background-position: center; 
@@ -815,7 +833,8 @@ h1 {
 
     .courses_text {
         position: relative; 
-        top:-180px;
+        top:100px;
+        padding-left:5vw;
     }
 
     .courses-content-wrap {
